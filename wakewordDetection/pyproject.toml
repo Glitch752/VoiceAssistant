@@ -1,0 +1,34 @@
+[project]
+name = "wakeworddetection"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Glitch752", email = "xxGlitch752xx@gmail.com" }
+]
+dependencies = [
+    "tensorflow>=2.19.0",
+    "librosa>=0.11.0",
+    "soundfile>=0.13.1",
+    "pyaudio>=0.2.14",
+    "numpy<2.2.0",
+    "sounddevice>=0.5.1",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[project.scripts]
+"wakeworddetection" = "wakeworddetection:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wakeworddetection"]
