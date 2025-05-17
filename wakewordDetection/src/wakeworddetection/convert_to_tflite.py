@@ -5,7 +5,7 @@ OUTPUT_PATH = './processed/wakeword_model.tflite'
 
 def convert_to_tflite():
     model = tf.keras.models.load_model(MODEL_PATH)
-
+   
     converter = tf.lite.TFLiteConverter.from_keras_model(model)
     # Enable optimizations for size and performance
     converter.optimizations = [tf.lite.Optimize.DEFAULT]
